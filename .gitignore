@@ -1,0 +1,8 @@
+backend/db/data.json
+backend/db/data.json.tmp
+backend/.env
+backend/.env.local
+node_modules/
+**/node_modules/
+.DS_Store
+
