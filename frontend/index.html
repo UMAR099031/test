@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Okurmen Exams — HTML/CSS/JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="grid"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="brand" role="button" tabindex="0" data-link="#/dashboard">
+        <div class="logo">OK</div>
+        <div>
+          <div class="brand-title">Okurmen Exams</div>
+          <div class="brand-sub">HTML • CSS • JavaScript</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="#/dashboard" data-auth="1">Dashboard</a>
+        <a class="nav-link" href="#/admin" data-role="admin">Admin</a>
+        <button class="btn btn-ghost" id="btnLogout" data-auth="1">Выйти</button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="view" id="view-login" data-view="login">
+        <div class="split">
+          <div class="panel hero">
+            <h1>Онлайн-экзамены по <span class="grad">HTML/CSS/JS</span></h1>
+            <p class="muted">
+              Разовый вход по коду. Каждый экзамен можно пройти только 1 раз. Результаты автоматически сохраняются и доступны преподавателю в админ-панели.
+            </p>
+            <div class="hero-stats">
+              <div class="stat">
+                <div class="stat-k">3</div>
+                <div class="stat-v">экзамена</div>
+              </div>
+              <div class="stat">
+                <div class="stat-k">15</div>
+                <div class="stat-v">вопросов</div>
+              </div>
+              <div class="stat">
+                <div class="stat-k">JWT</div>
+                <div class="stat-v">защита</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel card">
+            <h2>Вход</h2>
+            <div class="tabs" role="tablist" aria-label="login mode">
+              <button class="tab active" id="tabStudent" type="button">Ученик (код)</button>
+              <button class="tab" id="tabAdmin" type="button">Админ</button>
+            </div>
+
+            <form id="formCodeLogin" class="form" data-mode="student">
+              <div class="two">
+                <label class="field">
+                  <span>Имя</span>
+                  <input name="name" autocomplete="given-name" placeholder="Айбек" required />
+                </label>
+                <label class="field">
+                  <span>Фамилия</span>
+                  <input name="surname" autocomplete="family-name" placeholder="Садыков" required />
+                </label>
+              </div>
+              <label class="field">
+                <span>Код</span>
+                <input name="code" autocomplete="one-time-code" placeholder="например: 8XK2F9P1QZ" required />
+              </label>
+              <button class="btn btn-primary" type="submit">
+                <span class="btn-text">Войти по коду</span>
+                <span class="spinner" aria-hidden="true"></span>
+              </button>
+              <div class="hint muted">Код выдаёт преподаватель. Один код — один ученик.</div>
+            </form>
+
+            <form id="formAdminLogin" class="form hidden" data-mode="admin">
+              <label class="field">
+                <span>Логин</span>
+                <input name="login" autocomplete="username" placeholder="admin" required />
+              </label>
+              <label class="field">
+                <span>Пароль</span>
+                <input name="password" type="password" autocomplete="current-password" placeholder="••••••••" required />
+              </label>
+              <button class="btn btn-primary" type="submit">
+                <span class="btn-text">Войти (админ)</span>
+                <span class="spinner" aria-hidden="true"></span>
+              </button>
+              <div class="hint muted">Админ задаётся в <code>backend/.env</code>.</div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-register" data-view="register">
+        <div class="panel card narrow">
+          <h2>Регистрация ученика</h2>
+          <div class="hint muted">Эта страница не нужна для разового теста. Используйте вход по коду.</div>
+          <form id="formRegister" class="form">
+            <div class="two">
+              <label class="field">
+                <span>Имя</span>
+                <input name="name" autocomplete="given-name" placeholder="Айбек" required />
+              </label>
+              <label class="field">
+                <span>Фамилия</span>
+                <input name="surname" autocomplete="family-name" placeholder="Садыков" required />
+              </label>
+            </div>
+            <label class="field">
+              <span>Логин</span>
+              <input name="login" autocomplete="username" placeholder="например: aibek01" required />
+            </label>
+            <label class="field">
+              <span>Пароль</span>
+              <input name="password" type="password" autocomplete="new-password" placeholder="минимум 6 символов" required />
+            </label>
+            <button class="btn btn-primary" type="submit">
+              <span class="btn-text">Создать аккаунт</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+          <div class="row muted">
+            Уже есть аккаунт? <a href="#/login">Войти</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-dashboard" data-view="dashboard">
+        <div class="panel">
+          <div class="dash-head">
+            <div>
+              <h2>Dashboard</h2>
+              <div class="muted" id="dashHello">—</div>
+            </div>
+            <div class="mini-cards">
+              <div class="mini">
+                <div class="mini-k">Экзамены</div>
+                <div class="mini-v" id="statTotal">3</div>
+              </div>
+              <div class="mini">
+                <div class="mini-k">Пройдено</div>
+                <div class="mini-v" id="statPassed">0</div>
+              </div>
+              <div class="mini">
+                <div class="mini-k">Средний %</div>
+                <div class="mini-v" id="statAvg">—</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cards" id="examCards"></div>
+
+          <div class="panel card mt">
+            <div class="row-between">
+              <h3>Мои результаты</h3>
+              <button class="btn btn-ghost" id="btnRefreshMyResults">Обновить</button>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Экзамен</th>
+                    <th>Баллы</th>
+                    <th>%</th>
+                    <th>Дата</th>
+                  </tr>
+                </thead>
+                <tbody id="myResultsTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-exam" data-view="exam">
+        <div class="panel">
+          <div class="exam-top">
+            <div>
+              <div class="pill" id="examMeta">—</div>
+              <h2 id="examTitle">Экзамен</h2>
+              <div class="muted" id="examSubtitle">Ответьте на все вопросы и нажмите «Завершить».</div>
+            </div>
+            <div class="timer">
+              <div class="timer-label">Осталось</div>
+              <div class="timer-value" id="timerValue">00:00</div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+
+          <div class="panel card mt">
+            <div class="q-head">
+              <div class="q-num" id="qNum">1</div>
+              <div class="q-text" id="qText">—</div>
+            </div>
+            <div class="options" id="qOptions"></div>
+
+            <div class="exam-actions">
+              <button class="btn btn-ghost" id="btnPrev">Назад</button>
+              <div class="grow"></div>
+              <button class="btn btn-ghost" id="btnNext">Далее</button>
+              <button class="btn btn-primary" id="btnFinish">Завершить</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-result" data-view="result">
+        <div class="panel card narrow">
+          <div class="result-badge" id="resultBadge">—</div>
+          <h2 id="resultTitle">Результат</h2>
+          <div class="result-grid">
+            <div class="r">
+              <div class="rk">Баллы</div>
+              <div class="rv" id="resultScore">—</div>
+            </div>
+            <div class="r">
+              <div class="rk">Процент</div>
+              <div class="rv" id="resultPercent">—</div>
+            </div>
+            <div class="r">
+              <div class="rk">Оценка</div>
+              <div class="rv" id="resultGrade">—</div>
+            </div>
+            <div class="r">
+              <div class="rk">Дата</div>
+              <div class="rv" id="resultDate">—</div>
+            </div>
+          </div>
+          <div class="row-between mt">
+            <a class="btn btn-ghost" href="#/dashboard">На Dashboard</a>
+            <button class="btn btn-primary" id="btnOpenMyResult">Открыть результат</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-admin" data-view="admin">
+        <div class="panel">
+          <div class="row-between">
+            <div>
+              <h2>Admin Panel</h2>
+              <div class="muted">Поиск, фильтрация, блокировка учеников, удаление результатов.</div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap">
+              <button class="btn btn-ghost" id="btnGenCodes">Сгенерировать коды</button>
+              <button class="btn btn-ghost" id="btnAdminReload">Обновить</button>
+            </div>
+          </div>
+
+          <div class="admin-grid mt">
+            <div class="panel card">
+              <div class="row-between">
+                <h3>Ученики</h3>
+                <input class="input" id="adminUsersSearch" placeholder="поиск по имени/логину..." />
+              </div>
+              <div class="table-wrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Имя</th>
+                      <th>Логин</th>
+                      <th>Роль</th>
+                      <th>Статус</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminUsersTbody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="panel card">
+              <div class="row-between">
+                <h3>Результаты</h3>
+                <div class="filters">
+                  <select class="input" id="adminExamFilter">
+                    <option value="">Все</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                  </select>
+                  <input class="input" id="adminResultsSearch" placeholder="поиск..." />
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Ученик</th>
+                      <th>Экзамен</th>
+                      <th>Баллы</th>
+                      <th>%</th>
+                      <th>Дата</th>
+                      <th>Статус</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminResultsTbody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast-wrap" id="toastWrap"></div>
+
+    <div class="modal" id="modal">
+      <div class="modal-backdrop" data-close="1"></div>
+      <div class="modal-card">
+        <div class="modal-head">
+          <div class="modal-title" id="modalTitle">—</div>
+          <button class="icon-btn" id="modalClose" aria-label="close">✕</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-actions" id="modalActions"></div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

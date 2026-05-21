@@ -1,0 +1,163 @@
+{
+  "users": [
+    {
+      "id": "usr_Wz28LsxUbJgB",
+      "name": "Admin",
+      "surname": "Panel",
+      "login": "admin",
+      "passwordHash": "$2b$12$hKNFVnLQm8w2Nx8Ovuxf5OnoREan57YkjhXoMSb2QtCje.ZClT0Gu",
+      "role": "admin",
+      "passedExams": [],
+      "isBlocked": false,
+      "createdAt": "2026-05-20T16:00:31.337Z"
+    },
+    {
+      "id": "usr_-TdxRqQdeonF",
+      "name": "Aibek",
+      "surname": "Садыков",
+      "login": "code_adfh3fdf",
+      "passwordHash": "$2b$12$jtjchZ4h8OPihokpNxDrneD1MryPAeuVLO/HFtwmLFQcCqs.cp2Z6",
+      "role": "student",
+      "passedExams": [],
+      "isBlocked": true,
+      "createdAt": "2026-05-21T09:14:20.268Z"
+    },
+    {
+      "id": "usr_Kbe-FDPGMaBp",
+      "name": "umar",
+      "surname": "шаршембиев",
+      "login": "code_lzqij4ps",
+      "passwordHash": "$2b$12$zDgee9acSFVkzxAT3YGtkOJ/ZPuOq.YHjKD2tuKKWJHHph/4iOddK",
+      "role": "student",
+      "passedExams": [],
+      "isBlocked": false,
+      "createdAt": "2026-05-21T09:20:03.391Z"
+    }
+  ],
+  "results": [],
+  "accessCodes": [
+    {
+      "code": "LZQIJ4PS",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": "usr_Kbe-FDPGMaBp",
+      "usedAt": "2026-05-21T09:20:03.401Z",
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.205Z"
+    },
+    {
+      "code": "ECYEDCOZ",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.205Z"
+    },
+    {
+      "code": "QJ6IVLT0",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.205Z"
+    },
+    {
+      "code": "MI7ZSRNG",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "_IW5YXLX",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "ZIZI30DF",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "D8SOXLCT",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "E1F1NNZY",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "S4LZDARF",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "-D7AFLUB",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "QTIRTNAV",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "-HLD6AHJ",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "EI5IXLEI",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "GOSBQ97M",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    },
+    {
+      "code": "TGT4HICG",
+      "createdBy": "usr_Wz28LsxUbJgB",
+      "userId": null,
+      "usedAt": null,
+      "isDisabled": false,
+      "createdAt": "2026-05-21T09:16:16.206Z"
+    }
+  ],
+  "meta": {
+    "version": 1
+  }
+}
